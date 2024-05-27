@@ -4,13 +4,13 @@ on: [push]
 
 jobs: 
   main:
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  steps:
-  - uses: actions/checkout@v4
+    steps:
+    - uses: actions/checkout@v4
 
-  - name: Configure Solver
-    run: cmake -B ${{github.workspace}}/.build
+    - name: Configure Solver
+      run: cmake -B ${{github.workspace}}/.build
 
-  - name: Build Solver
-    run: cmake --build ${{github.workspace}}/.build
+    - name: Build Solver
+      run: cmake --build ${{github.workspace}}/.build
