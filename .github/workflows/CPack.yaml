@@ -21,10 +21,10 @@ jobs:
       run: cmake --build ${{github.workspace}}/.build
 
     - name: Build package
-      run: cmake --build ${{github.workspace}}/.build --target package
+      run: sudo cmake --build ${{github.workspace}}/.build --target package
 
     - name: Build source package
-      run: cmake --build ${{github.workspace}}/.build --target package_source
+      run: sudo cmake --build ${{github.workspace}}/.build --target package_source
 
     - name: Make a release
       uses: ncipollo/release-action@v1.10.0
