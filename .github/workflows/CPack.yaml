@@ -30,3 +30,9 @@ jobs:
       uses: ncipollo/release-action@v1.10.0
       with:
         artifacts: ".build/*.deb,.build/*.tar.gz,.build/*.zip"
+        tag: ${GITHUB_REF_NAME#v}
+    - name: Artifacts
+    uses: actions/upload-artifact@v4
+    with:
+      name: solver
+      path: ${{github.workspace}}/.build/solver
